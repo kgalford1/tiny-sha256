@@ -1,0 +1,12 @@
+# temp directory
+/tmp/
+
+# vim swap files
+*.swp
+*.swo
+
+# rust stuff
+/target/
+**/*.rs.bk
+Cargo.lock
+

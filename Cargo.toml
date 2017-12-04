@@ -1,0 +1,7 @@
+[package]
+name = "tiny-sha256"
+version = "0.1.0"
+authors = ["Forrest Marshall <forrest@mimirblockchain.solutions>"]
+
+[dependencies]
+

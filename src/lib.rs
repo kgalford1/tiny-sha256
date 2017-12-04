@@ -80,6 +80,7 @@ impl Sha256 {
     }
     
     /// process a filled data block.
+    #[inline]
     fn process(&mut self) {
         let mut w = [0u32;64];
         for (dest,chunk) in w.iter_mut().zip(self.data.chunks(4)) {
@@ -146,6 +147,7 @@ impl Sha256 {
         rslt
     }
 }
+
 
 
 #[cfg(test)]

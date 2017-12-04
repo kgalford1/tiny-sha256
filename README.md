@@ -1,6 +1,6 @@
 # tiny-sha256
 
-A minimal implementation of `SHA-256` in Rust.
+A minimal and freestanding implementation of `SHA-256` in pure Rust.
 
 
 ## About

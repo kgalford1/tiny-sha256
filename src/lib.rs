@@ -3,6 +3,7 @@
 #![allow(non_snake_case)]
 #![no_std]
 
+use core::convert::TryInto;
 
 macro_rules! overflowing_add {
     ($b: expr, $($a: expr),+) => {
@@ -127,7 +128,7 @@ impl Sha256 {
     /// Finish the hashing process.  Consumes the
     /// hasher and returns the final result.
     pub fn finish(mut self) -> [u8;32] { 
-        let L = (self.size * 8) + (self.reps * 512);
+        let L: u64 = ((self.size * 8) + (self.reps * 512)).try_into().unwrap();
         let rem = (L + 64 + 8) % 512;
         let k = if rem == 0 { 0 } else { 512 - rem };
         self.absorb(&[0x80]);
